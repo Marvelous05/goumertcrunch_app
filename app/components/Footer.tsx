@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <h4>Goumert Crunch</h4>
             <p style={{ margin: 0, color: "#c7c7c7", lineHeight: 1.8 }}>
-              Elevated breakfast retail for Harare’s modern shopper.
+              Breakfast Made Easy
             </p>
           </div>
           <div>
@@ -29,10 +29,10 @@ export default function Footer() {
             <h4>Support</h4>
             <ul>
               <li>
-                <a href="mailto:info@goumert.co.zw">info@goumert.co.zw</a>
+                <a href="mailto:info@goumert.co.zw">goumertcrunch@gmail.com</a>
               </li>
               <li>
-                <span>+263 (0)1 234 5678</span>
+                <span>+263785456313</span>
               </li>
             </ul>
           </div>

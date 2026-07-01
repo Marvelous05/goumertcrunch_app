@@ -54,14 +54,14 @@ export default function ContactPage() {
             <strong>Phone:</strong>
             <br />
             <a href="tel:+263123456789" style={{ color: "#ff6a00", textDecoration: "none" }}>
-              +263 (0)1 234 5678
+              +263785456313
             </a>
           </p>
           <p style={{ margin: "0.75rem 0 0" }}>
             <strong>Email:</strong>
             <br />
             <a href="mailto:info@goumert.co.zw" style={{ color: "#ff6a00", textDecoration: "none" }}>
-              info@goumert.co.zw
+              goumertcrunch@gmail.com
             </a>
           </p>
         </div>

@@ -15,6 +15,45 @@ type OrderItem = { productId: string; quantity: number };
 
 type User = { id: string; name: string; email: string; role: string };
 
+const categorySections = [
+  {
+    title: "Cereals",
+    tagline: "Breakfast staples for every morning",
+    subtitle: "From crunchy classics to family favorites",
+    items: [
+      { name: "Weetbix (Banana)", price: "$3.00", note: "Great for quick breakfasts" },
+      { name: "Cerevita Wheat & Banana", price: "$3.00", note: "Balanced and satisfying" },
+      { name: "Jungle Oats 1kg", price: "$3.00", note: "Warm, wholesome, and filling" },
+      { name: "Cerevita Chocomalt", price: "$3.50", note: "A richer breakfast treat" },
+      { name: "Everyday Milk", price: "$3.50", note: "Perfect with breakfast bowls" },
+      { name: "Coco Pops", price: "$4.00", note: "Kid-friendly crunch" },
+      { name: "Cerelac", price: "$4.50", note: "Comforting and nutritious" },
+      { name: "Kellogg's Cornflakes 1kg", price: "$5.50", note: "Classic cereal choice" },
+    ],
+  },
+  {
+    title: "Glytime Foods",
+    tagline: "Smart snacks and wholesome extras",
+    subtitle: "A tasty selection for busy routines",
+    items: [
+      { name: "Oaties Oat Cookies", price: "$2.50", note: "Crunchy and light" },
+      { name: "Granola 350g", price: "$3.00", note: "Sweet, nutty, and packed with texture" },
+      { name: "Peanut Butter Granola 400g", price: "$3.00", note: "A richer breakfast option" },
+      { name: "Rolled Oats 1kg", price: "$4.00", note: "Ideal for porridge and baking" },
+    ],
+  },
+  {
+    title: "Specials",
+    tagline: "Limited-time favorites and pantry staples",
+    subtitle: "Great value for everyday needs",
+    items: [
+      { name: "Cough Drops", price: "$1.00 each", note: "3 for $2.00" },
+      { name: "Nando's Sauces 250g", price: "$3.00", note: "Bring flavor to every meal" },
+      { name: "Ferrero Rocher T16", price: "$10.00", note: "A premium treat to share" },
+    ],
+  },
+];
+
 export default function ClientDashboardPage() {
   const [user, setUser] = useState<User | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
@@ -128,8 +167,47 @@ export default function ClientDashboardPage() {
         </div>
       ) : null}
 
+      <section className="card" style={{ marginBottom: "1.5rem", background: "linear-gradient(135deg, rgba(255,106,0,0.12), rgba(255,255,255,0.03))", borderColor: "rgba(255,106,0,0.3)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+          <div>
+            <h3 style={{ margin: 0, color: "#ff6a00" }}>Breakfast Made Easy</h3>
+            <p style={{ margin: "0.35rem 0 0", color: "#f5f5f5" }}>Curated breakfast essentials in Harare, ready for pickup or order.</p>
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontWeight: 700 }}>Harare</div>
+            <div className="small-note">Call: 0785 456 313</div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ display: "grid", gap: "1rem", marginBottom: "1.5rem" }}>
+        {categorySections.map((section) => (
+          <div key={section.title} className="card">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", flexWrap: "wrap", gap: "1rem" }}>
+              <div>
+                <h3 style={{ margin: 0, color: "#ff6a00" }}>{section.title}</h3>
+                <p className="small-note" style={{ margin: "0.3rem 0 0" }}>{section.tagline}</p>
+              </div>
+              <div className="small-note" style={{ maxWidth: "280px", textAlign: "right" }}>{section.subtitle}</div>
+            </div>
+
+            <div style={{ display: "grid", gap: "0.75rem", marginTop: "1rem" }}>
+              {section.items.map((item) => (
+                <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", padding: "0.9rem 1rem", background: "#0f0f0f", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                  <div>
+                    <div style={{ fontWeight: 700 }}>{item.name}</div>
+                    <div className="small-note" style={{ marginTop: "0.2rem" }}>{item.note}</div>
+                  </div>
+                  <div style={{ textAlign: "right", fontWeight: 700, color: "#ff6a00" }}>{item.price}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
       <section className="section-heading">
-        <h2>Services & products</h2>
+        <h2>Fresh stock & quick order</h2>
       </section>
 
       {loading ? (

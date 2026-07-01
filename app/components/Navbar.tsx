@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -52,6 +53,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav-actions">
+        <ThemeToggle />
         {user ? (
           <span style={{ color: "#ccc", fontSize: "0.95rem" }}>
             {user.name} • {user.role === "CLIENT" ? "Client" : "Business"}
