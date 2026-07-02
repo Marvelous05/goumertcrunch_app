@@ -344,6 +344,100 @@ body {
   font-weight: 700;
 }
 
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.success-card {
+  border-color: rgba(255, 106, 0, 0.5);
+}
+
+.inventory-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.8fr);
+  gap: 1.4rem;
+}
+
+.stacked-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-shell {
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 106, 0, 0.14);
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 1rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inventory-table th {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 106, 0, 0.08);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.status-pill.in-stock {
+  background: rgba(84, 196, 84, 0.16);
+  color: #8ce88c;
+}
+
+.status-pill.low-stock {
+  background: rgba(255, 184, 0, 0.16);
+  color: #ffd67d;
+}
+
+.status-pill.out-of-stock {
+  background: rgba(255, 102, 102, 0.16);
+  color: #ff9d9d;
+}
+
+.product-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-form label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
 .input-field,
 .select-field,
 .textarea-field {
@@ -450,6 +544,10 @@ body {
   .nav-links,
   .nav-actions {
     justify-content: center;
+  }
+
+  .inventory-layout {
+    grid-template-columns: 1fr;
   }
 }
 
